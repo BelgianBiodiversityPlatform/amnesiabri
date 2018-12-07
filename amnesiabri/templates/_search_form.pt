@@ -1,0 +1,46 @@
+<!--
+<div class="bri_search_box">
+    <h4>Free text search</h4>
+    <input type="text" class="form-control" placeholder="Text input" />
+</div>
+-->
+
+<div class="bri_search_box">
+    <h4>Services</h4>
+    <div class="checkbox" tal:repeat="service services">
+        <label>
+            <input type="checkbox" value="${service.id}" name="service" />
+            ${service.name}
+        </label>
+    </div>
+</div>
+ 
+<div class="bri_search_box">
+    <h4>Taxas</h4>
+    <div class="checkbox" tal:repeat="taxa taxas">
+        <label>
+            <input type="checkbox" value="${taxa.id}" name="taxa" />
+            ${taxa.name}
+        </label>
+    </div>
+</div>
+ 
+<div class="bri_search_box">
+    <h4>Ecosystems</h4>
+    <div class="checkbox" tal:repeat="ecosystem ecosystems">
+        <label>
+            <input type="checkbox" value="${ecosystem.id}" name="ecosystem" />
+            ${ecosystem.name}
+        </label>
+    </div>
+</div>
+
+<div class="bri_search_box">
+    <h4>Geographical Focuses</h4>
+    <div class="checkbox" tal:repeat="geofocus geofocuses">
+        <label>
+            <input type="checkbox" value="${geofocus.id}" name="geofocus" />
+            ${geofocus.name}
+        </label>
+    </div>
+</div>

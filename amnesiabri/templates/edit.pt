@@ -1,0 +1,29 @@
+<metal:block use-macro="layout.macros['layout']">
+<metal:block fill-slot="title_more">: BRI</metal:block>
+<metal:block fill-slot="content">
+
+    <metal:block use-macro="load: amnesiabbpf:templates/content/browser_modal.pt" />
+
+    <div id ="main">
+        <section class="edit-document">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form id="document_form" method="post" action="${form_action}">
+                            ${structure: form}
+                            <input type="submit" value="send" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</metal:block>
+
+<metal:block fill-slot="javascript_srcs">
+    <script src="${request.static_url('amnesiabbpf:static/dist/bri_edit.bundle.js')}"></script>
+</metal:block>
+<metal:block fill-slot="head-bottom">
+    <link href="${request.static_url('amnesiabbpf:static/dist/styles/bri_edit.css')}" rel="stylesheet">
+</metal:block>
+</metal:block>

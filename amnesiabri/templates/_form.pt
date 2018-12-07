@@ -1,0 +1,69 @@
+<metal:block use-macro="load: amnesiabbpf:templates/content/_form.pt">
+    <metal:block fill-slot="section-default">
+
+    <!-- BODY -->
+
+    <div class="form-group">
+        <label for="bri_body">Body</label>
+        <span class="help-block">BRI text</span>
+        <textarea name="body" id="bri_body" class="mceEditor"></textarea>
+    </div>
+
+    <!-- LOGO -->
+
+    <div class="form-group">
+        <label for="interview_picture">Logo</label>
+        <span class="help-block">A logo representing the BRI.</span>
+        <input class="btn btn-default" type="button" value="Select BRI logo" id="select_bri_logo">
+        <input class="btn btn-danger" type="button" value="Remove BRI logo" id="remove_bri_logo" style="display:none">
+        <input type="hidden" name="logo_id" id="logo_id" />
+        <div>
+            <img id="selected_bri_logo" src="" />
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+
+    <div class="form-group">
+        <label for="bri_services">Services</label>
+        <span class="help-block">Services</span>
+        <select class="form-control" name="services_id" id="bri_services" multiple>
+            <option tal:repeat="service all_services" value="${service.id}">${service.name}</option>
+        </select>
+    </div>
+
+    <!-- TAXAS -->
+
+    <div class="form-group">
+        <label for="bri_taxas">Taxas</label>
+        <span class="help-block">Taxas</span>
+        <select class="form-control" name="taxas_id" id="bri_taxas" multiple>
+            <option tal:repeat="taxa all_taxas" value="${taxa.id}">${taxa.name}</option>
+        </select>
+    </div>
+
+    <!-- ECOSYSTEMS -->
+
+    <div class="form-group">
+        <label for="bri_ecosystems">Ecosystems</label>
+        <span class="help-block">Ecosystems</span>
+        <select class="form-control" name="ecosystems_id" id="bri_ecosystems" multiple>
+            <option tal:repeat="ecosystem all_ecosystems" value="${ecosystem.id}">${ecosystem.name}</option>
+        </select>
+    </div>
+
+    <!-- GEOGRAPHICAL FOCUSES -->
+
+    <div class="form-group">
+        <label for="bri_geofocuses">Geographical Focuses</label>
+        <span class="help-block">Geographical Focuses</span>
+        <select class="form-control" name="geofocuses_id" id="bri_geofocuses" multiple>
+            <option tal:repeat="geofocus all_geofocuses" value="${geofocus.id}">${geofocus.name}</option>
+        </select>
+    </div>
+
+
+
+
+    </metal:block>
+</metal:block>

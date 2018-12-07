@@ -1,0 +1,12 @@
+<div tal:repeat="bri bris" class="bri">
+    <h3>
+        <a href="${request.resource_url(bri)}">${bri.title}</a>
+    </h3>
+    <p><small>${bri.description}</small></p>
+
+    <span class="label label-primary" tal:repeat="service bri.services">${service.name}</span>
+    <span class="label label-success" tal:repeat="taxa bri.taxas">${taxa.name}</span>
+    <span class="label label-warning" tal:repeat="ecosystem bri.ecosystems">${ecosystem.name}</span>
+    <span class="label label-danger" tal:repeat="geo bri.geofocuses">${geo.name}</span>
+
+</div>
