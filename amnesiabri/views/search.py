@@ -27,7 +27,7 @@ def includeme(config):
 class Search(BaseView):
 
     @view_config(name='form', accept='text/html',
-                 renderer='templates/bri/_search_form.pt')
+                 renderer='amnesiabri:templates/bri/_search_form.pt')
     def form(self):
         return {
             'services': self.context.get_services(),
@@ -37,7 +37,7 @@ class Search(BaseView):
         }
 
     @view_config(name='search',
-                 renderer='templates/bri/search_results.pt')
+                 renderer='amnesiabri:templates/bri/search_results.pt')
     def search(self):
         params = self.request.GET.mixed()
 

@@ -16,7 +16,7 @@ from amnesiabri import Service
 from amnesiabri import Taxa
 from amnesiabri import Ecosystem
 from amnesiabri import Geofocus
-from amnesiabri import BRISchema
+from amnesiabri.validation import BRISchema
 
 log = logging.getLogger(__name__)  # pylint: disable=invalid-name
 

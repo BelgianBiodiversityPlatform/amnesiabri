@@ -27,7 +27,7 @@ def includeme(config):
 class BRICRUD(ContentCRUD):
     ''' BRI CRUD '''
 
-    form_tmpl = 'templates/bri/_form.pt'
+    form_tmpl = 'amnesiabri:templates/bri/_form.pt'
 
     @property
     def schema(self):
@@ -58,7 +58,7 @@ class BRICRUD(ContentCRUD):
         }
 
     @view_config(request_method='GET', name='edit',
-                 renderer='templates/bri/edit.pt',
+                 renderer='amnesiabri:templates/bri/edit.pt',
                  context=BRIEntity,
                  permission='update')
     def edit(self):
@@ -66,7 +66,7 @@ class BRICRUD(ContentCRUD):
         return self.edit_form(data)
 
     @view_config(request_method='GET', name='new',
-                 renderer='templates/bri/edit.pt',
+                 renderer='amnesiabri:templates/bri/edit.pt',
                  context=BRIResource,
                  permission='create')
     def new(self):
@@ -95,7 +95,7 @@ class BRICRUD(ContentCRUD):
     #########################################################################
 
     @view_config(request_method='POST',
-                 renderer='templates/bri/edit.pt',
+                 renderer='amnesiabri:templates/bri/edit.pt',
                  context=BRIResource,
                  permission='create')
     def create(self):
@@ -119,7 +119,7 @@ class BRICRUD(ContentCRUD):
     #########################################################################
 
     @view_config(request_method='POST',
-                 renderer='templates/bri/edit.pt',
+                 renderer='amnesiabri:templates/bri/edit.pt',
                  context=BRIEntity,
                  permission='update')
     def update(self):
